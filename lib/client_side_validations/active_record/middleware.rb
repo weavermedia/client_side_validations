@@ -38,7 +38,7 @@ module ClientSideValidations::ActiveRecord
         end
       end
 
-      !klass.where(relation).exists?
+      !klass.unscoped.where(relation).exists?
     end
 
     private
